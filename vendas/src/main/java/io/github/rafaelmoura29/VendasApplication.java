@@ -36,7 +36,7 @@ public class VendasApplication {
             clientes.buscarPorNome("Cli").forEach(System.out::println);
 
             System.out.println("Deletando");
-            /*clientes.obterTodos().forEach(c ->{
+            clientes.obterTodos().forEach(c ->{
                 clientes.deletar(c);
             });
 
@@ -46,7 +46,7 @@ public class VendasApplication {
                 System.out.println("Nenhum cliente encontrado");
             }else{
                 todosClientes.forEach(System.out::println);
-            }*/
+            }
 
 
         };
