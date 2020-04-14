@@ -1,7 +1,7 @@
 package io.github.rafaelmoura29;
 
 import io.github.rafaelmoura29.domain.entity.Cliente;
-import io.github.rafaelmoura29.domain.repositorio.Clientes;
+import io.github.rafaelmoura29.domain.repositories.Clientes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,7 +36,8 @@ public class VendasApplication {
             todosClientes.forEach(System.out::println);
 
             System.out.println("Buscando por nome");
-            clientes.findByNomeLike("Cli").forEach(System.out::println);
+            List<Cliente> result = clientes.encontrarPorNome("Rafael");
+            result.forEach(System.out::println);
 
             System.out.println("Deletando");
             clientes.findAll().forEach(c ->{
