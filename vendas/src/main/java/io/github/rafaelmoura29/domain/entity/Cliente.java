@@ -1,6 +1,7 @@
 package io.github.rafaelmoura29.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.stereotype.Controller;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -16,6 +17,9 @@ public class Cliente {
 
     @Column(name = "nome", length = 100)
     private String nome;
+
+    @Column(name = "cpf", length = 11)
+    private String cpf;
 
     @JsonIgnore
     @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
@@ -55,6 +59,14 @@ public class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     @Override
